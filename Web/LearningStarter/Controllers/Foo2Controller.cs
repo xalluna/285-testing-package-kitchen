@@ -3,7 +3,7 @@ using LearningStarter.Entities;
 
 namespace LearningStarter.Controllers;
 
-// [OmitMethods(ControllerMethods.Create)]
+[OmitMethods(ControllerMethods.Create)]
 public class Foo2Controller: EntityController<Product>
 {
 }

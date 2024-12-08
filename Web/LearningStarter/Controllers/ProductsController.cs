@@ -52,18 +52,7 @@ public class ProductsController(IProductsService productsService) : ControllerBa
     }
 
     [HttpGet("foo")]
-    public IActionResult GetFoo()
-    {
-        var type = typeof(ControllerMethods)
-            .GetFields(BindingFlags.Public | BindingFlags.Static)
-            .Where(x => x.FieldType == typeof(string))
-            .Select(x => (string) x.GetValue(null));
-        
-        return Ok(type);
-    }
-
-    [HttpGet("foo2")]
-    public ActionResult<Response<bool>> GetFoo2()
+    public ActionResult<Response<bool>> GetFoo()
     {
         return Ok(ControllerMethodsExtensions.ValidateControllerConfiguration());
     }
